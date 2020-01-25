@@ -1,0 +1,69 @@
+# AP-loss
+The implementation of “[Towards accurate one-stage object detection with AP-loss](https://arxiv.org/abs/1904.06373)”
+
+### Requirements
+- Python 2.7
+- PyTorch 1.3+
+- Cuda
+
+### Installation
+1. Clone this repo
+```
+git clone https://github.com/cccorn/AP-loss.git
+cd AP-loss
+```
+2. Install the python packages:
+```
+pip install pycocotools
+pip install opencv-python
+```
+3. Create directories:
+```
+mkdir data models results
+```
+4. Prepare Data. You can use
+```
+ln -s $YOUR_PATH_TO_coco data/coco
+ln -s $YOUR_PATH_TO_VOCdevkit data/voc
+```
+The directories should be arranged like:
+```
+├── data
+│   ├── coco
+│   │   ├── annotations
+│   │   ├── images
+│   │   │   ├── train2017
+│   │   │   ├── val2017
+│   │   │   ├── test-dev2017
+│   ├── voc
+│   │   ├── VOC2007
+│   │   ├── VOC2012
+```
+5. Prepare the pre-trained models and put them in `models` like:
+```
+├── models
+│   ├── resnet50-pytorch.pth
+|   ├── resnet101-pytorch.pth
+```
+We use the ResNet-50 and ResNet-101 pre-trained models which are converted from [this repo](https://github.com/KaimingHe/deep-residual-networks). We provide the converted pre-trained models at [this link](https://1drv.ms/u/s!AgPNhBALXYVSa1pQCFJNNk6JgaA?e=PqhsWD).
+
+### Training
+
+```
+bash train.sh
+```
+You can modify the configurations in `lib/config.py` to change the gpu_ids, network depth, image size, etc.
+
+### Testing
+
+```
+bash test.sh
+```
+
+### Note
+
+We release this PyTorch implementation instead of MXNet due to an engineering [issue](https://github.com/apache/incubator-mxnet/issues/8884). The python custom operators in MXNet does not run in parrallel when using multi-gpus. It is more practical to implement AP-loss in PyTorch for faster training speed. 
+
+### Acknowledgements
+
+- Many thanks to the pytorch implementation of RetinaNet at [pytorch-retinanet](https://github.com/yhenon/pytorch-retinanet).
