@@ -45,7 +45,7 @@ The directories should be arranged like:
 │   ├── resnet50-pytorch.pth
 |   ├── resnet101-pytorch.pth
 ```
-We use the ResNet-50 and ResNet-101 pre-trained models which are converted from [this repo](https://github.com/KaimingHe/deep-residual-networks). We provide the converted pre-trained models at [this link](https://1drv.ms/u/s!AgPNhBALXYVSa1pQCFJNNk6JgaA?e=PqhsWD).
+We use the ResNet-50 and ResNet-101 pre-trained models which are converted from [here](https://github.com/KaimingHe/deep-residual-networks). We also provide the converted pre-trained models at [this link](https://1drv.ms/u/s!AgPNhBALXYVSa1pQCFJNNk6JgaA?e=PqhsWD).
 
 ### Training
 
@@ -67,3 +67,16 @@ We release this PyTorch implementation instead of MXNet due to an engineering [i
 ### Acknowledgements
 
 - Many thanks to the pytorch implementation of RetinaNet at [pytorch-retinanet](https://github.com/yhenon/pytorch-retinanet).
+
+### Citation
+
+If you find this repository useful in your research, please consider citing:
+```
+@inproceedings{chen2019towards,
+  title={Towards accurate one-stage object detection with AP-loss},
+  author={Chen, Kean and Li, Jianguo and Lin, Weiyao and See, John and Wang, Ji and Duan, Lingyu and Chen, Zhibo and He, Changwei and Zou, Junni},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={5119--5127},
+  year={2019}
+}
+```
