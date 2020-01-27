@@ -62,7 +62,7 @@ bash test.sh
 
 ### Note
 
-We release this PyTorch implementation instead of MXNet due to an engineering [issue](https://github.com/apache/incubator-mxnet/issues/8884). The python custom operators in MXNet does not run in parrallel when using multi-gpus. It is more practical to implement AP-loss in PyTorch for faster training speed. 
+We release this PyTorch implementation instead of MXNet implementation due to an engineering [issue](https://github.com/apache/incubator-mxnet/issues/8884). The python custom operators in MXNet does not run in parrallel when using multi-gpus. It is more practical to implement AP-loss in PyTorch for faster training speed. 
 
 ### Acknowledgements
 
