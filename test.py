@@ -53,7 +53,7 @@ def main(args=None):
     if use_gpu:
         retinanet = retinanet.cuda()
 	
-    retinanet = torch.nn.DataParallel(module=retinanet,device_ids=[0]).cuda()
+    retinanet = torch.nn.DataParallel(module=retinanet,device_ids=[config.gpu_ids[0]]).cuda()
 
     retinanet.load_state_dict(torch.load('models/'+config.dataset['dataset']+'_retinanet_'+str(parser.test_epoch)+'.pt'))
 
@@ -70,4 +70,5 @@ def main(args=None):
         raise ValueError('Not implemented.')
 
 if __name__ == '__main__':
-    main()
+    with torch.cuda.device(config.gpu_ids[0]):
+        main()
