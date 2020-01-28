@@ -67,7 +67,7 @@ def main(args=None):
 
     optimizer = optim.SGD(retinanet.parameters(), lr=config.lr, momentum=0.9, weight_decay=1e-4)
 
-    scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=config.lr_step, gamma=0.1)
+    scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=config.dataset['lr_step'], gamma=0.1)
 
     warmup=config.warmup
     begin_epoch=0
@@ -86,7 +86,7 @@ def main(args=None):
 
     print('Num training images: {}'.format(len(dataset_train)))
 
-    for epoch_num in range(begin_epoch,config.epochs):
+    for epoch_num in range(begin_epoch,config.dataset['epochs']):
 
         retinanet.train()
         retinanet.module.freeze_bn()
