@@ -65,7 +65,7 @@ def main(args=None):
     
     retinanet.training = True
 
-    optimizer = optim.SGD(retinanet.parameters(), lr=(config.lr*config.batch_size*len(config.gpu_ids)), momentum=0.9, weight_decay=1e-4)
+    optimizer = optim.SGD(retinanet.parameters(), lr=config.lr, momentum=0.9, weight_decay=1e-4)
 
     scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=config.lr_step, gamma=0.1)
 
@@ -109,7 +109,7 @@ def main(args=None):
             loss.backward()
 
             if warmup and optimizer._step_count<=config.warmup_step:
-                init_lr=config.lr*config.batch_size*len(config.gpu_ids)
+                init_lr=config.lr
                 warmup_lr=init_lr*config.warmup_factor + optimizer._step_count/float(config.warmup_step)*(init_lr*(1-config.warmup_factor))
                 for ii_ in optimizer.param_groups:
                     ii_['lr']=warmup_lr 
