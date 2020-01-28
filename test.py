@@ -55,7 +55,7 @@ def main(args=None):
 	
     retinanet = torch.nn.DataParallel(module=retinanet,device_ids=[config.gpu_ids[0]]).cuda()
 
-    retinanet.load_state_dict(torch.load('models/'+config.dataset['dataset']+'_retinanet_'+str(parser.test_epoch)+'.pt'))
+    retinanet.load_state_dict(torch.load('models/'+config.dataset['dataset']+'_retinanet_'+str(parser.test_epoch)+'.pt',map_location=lambda storage, loc: storage.cuda()))
 
     retinanet.training = False
 
