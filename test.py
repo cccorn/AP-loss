@@ -22,7 +22,7 @@ from lib import config
 
 def main(args=None):
 
-    parser     = argparse.ArgumentParser(description='Simple training script for training a RetinaNet network.')
+    parser     = argparse.ArgumentParser(description='Simple testing script for testing a RetinaNet network.')
 
     parser.add_argument('--dataset',type=str)
     parser.add_argument('--test_epoch',type=int,default=0)
