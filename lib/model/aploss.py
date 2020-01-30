@@ -144,9 +144,11 @@ def AP_loss(logits,targets):
     fg_logits=logits[labels_p]
     threshold_logit=torch.min(fg_logits)-delta
 
+    ######## Ignore those negative j that satisfy (L_{ij}=0 for all positive i), to accelerate the AP-loss computation.
     valid_labels_n=((targets==0)&(logits>=threshold_logit))
     valid_bg_logits=logits[valid_labels_n] 
     valid_bg_grad=torch.zeros(len(valid_bg_logits)).cuda()
+    ########
 
     fg_num=len(fg_logits)
     prec=torch.zeros(fg_num).cuda()
