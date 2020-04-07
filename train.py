@@ -72,7 +72,7 @@ def main(args=None):
     warmup=config.warmup
     begin_epoch=0
     if parser.resume==True:
-        retinanet.load_state_dict(torch.load('./models/coco_retinanet_'+str(parser.resume_epoch)+'.pt'))
+        retinanet.load_state_dict(torch.load('./models/'+config.dataset['dataset']+'_retinanet_'+str(parser.resume_epoch)+'.pt'))
         begin_epoch=parser.resume_epoch+1 
         for jj in range(begin_epoch):
             scheduler.step()
