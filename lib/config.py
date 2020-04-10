@@ -10,7 +10,7 @@ warmup_step=500
 warmup_factor=0.33333333
 
 train_img_size=512
-test_img_size=[500,833]
+test_img_size=[500,833]  #(size of smallest side, maximum size of the side)
 
 anchor_ratios=np.array([0.5,1.0,2.0])
 anchor_scales=np.array([2**0,2**(1.0/2.0)])
