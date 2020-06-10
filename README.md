@@ -72,11 +72,11 @@ We release the AP-loss implementation in PyTorch instead of in MXNet due to an e
 
 If you find this repository useful in your research, please consider citing:
 ```
-@inproceedings{chen2019towards,
-  title={Towards accurate one-stage object detection with AP-loss},
-  author={Chen, Kean and Li, Jianguo and Lin, Weiyao and See, John and Wang, Ji and Duan, Lingyu and Chen, Zhibo and He, Changwei and Zou, Junni},
-  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
-  pages={5119--5127},
-  year={2019}
+@article{chen2020ap,
+  title={AP-Loss for Accurate One-Stage Object Detection},
+  author={Chen, Kean and Lin, Weiyao and Li, Jianguo and See, John and Wang, Ji and Zou, Junni},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2020},
+  doi={10.1109/TPAMI.2020.2991457}
 }
 ```
