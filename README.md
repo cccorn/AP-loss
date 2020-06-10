@@ -76,7 +76,6 @@ If you find this repository useful in your research, please consider citing:
   title={AP-Loss for Accurate One-Stage Object Detection},
   author={Chen, Kean and Lin, Weiyao and Li, Jianguo and See, John and Wang, Ji and Zou, Junni},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  year={2020},
   doi={10.1109/TPAMI.2020.2991457}
 }
 ```
