@@ -1,5 +1,5 @@
 # AP-loss
-The implementation of “[Towards accurate one-stage object detection with AP-loss](https://arxiv.org/abs/1904.06373)” and its [journal version](https://arxiv.org/abs/2008.07294).
+The implementation of “[Towards accurate one-stage object detection with AP-loss](https://arxiv.org/abs/1904.06373)”.
 
 ### Requirements
 - Python 2.7
